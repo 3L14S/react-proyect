@@ -7,13 +7,6 @@ function Categorias() {
   const [libros, setLibros] = useState([]);
   const [inputValue, SetInputValue] = useState('');
 
-  function sortLibros(lib, cate) {
-    for (let i = 0; i < lib.length; i += 1) {
-      if (lib[i].cate_id === cate.id) {
-        <li>lib.nombre</li>;
-      }
-    }
-  }
   async function getCategories() {
     try {
       const responseCategorias = await axios.get(
@@ -83,8 +76,7 @@ function Categorias() {
             key={cat.nombre}>
             x
           </button>
-          {cat.nombre}
-          <ul>{sortLibros(libros, categoria)}</ul>
+          {cat.nombre}          
         </h3>
       ))}
       Nombre de la categoria
